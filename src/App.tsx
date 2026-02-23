@@ -40,7 +40,10 @@ import {
   RefreshCw,
   Twitter,
   Github,
-  Send
+  Send,
+  Sun,
+  Rocket,
+  LibraryBig
 } from 'lucide-react';
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
@@ -651,7 +654,10 @@ function HomeScreen({ onNavigate, onStartReview, onStartReading, onStartWriting 
             <User className="w-6 h-6 m-auto text-slate-500" />
           </div>
           <div className="flex-1 px-4">
-            <p className="text-[10px] text-slate-500 dark:text-[#92a4c9] font-semibold uppercase tracking-wider">你好，</p>
+            <div className="flex items-center gap-1">
+              <Sun className="w-3.5 h-3.5 text-amber-500" />
+              <p className="text-[10px] text-slate-500 dark:text-[#92a4c9] font-semibold uppercase tracking-wider">你好，</p>
+            </div>
             <h2 className="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-tight truncate max-w-[150px]">{user?.email?.split('@')[0] || '学习者'}</h2>
           </div>
           <div className="flex w-10 items-center justify-end">
@@ -684,15 +690,16 @@ function HomeScreen({ onNavigate, onStartReview, onStartReading, onStartWriting 
       <div className="flex shrink-0 flex-col gap-3 px-4 pt-4 pb-2">
         <button
           onClick={onStartReview}
-          className="w-full py-3 bg-primary hover:bg-primary/90 text-white rounded-lg font-bold transition-colors flex items-center justify-center gap-2"
+          className="w-full py-4 bg-gradient-to-r from-primary to-indigo-500 hover:opacity-90 text-white rounded-xl font-bold transition-all flex items-center justify-center gap-3 shadow-lg shadow-primary/20 active:scale-[0.98]"
         >
-          <Play className="w-4 h-4 fill-white" />
-          开始复习
+          <Rocket className="w-5 h-5 fill-white/20" />
+          <span className="text-lg">开始复习</span>
         </button>
         <button
           onClick={onStartReading}
-          className="w-full py-3 bg-white dark:bg-[#232f48] border border-slate-200 dark:border-[#324467] text-slate-700 dark:text-white rounded-lg font-bold hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+          className="w-full py-3.5 bg-white dark:bg-[#232f48] border-2 border-slate-100 dark:border-[#324467] text-slate-700 dark:text-white rounded-xl font-bold hover:bg-slate-50 dark:hover:bg-slate-800 transition-all flex items-center justify-center gap-2 active:scale-[0.98]"
         >
+          <LibraryBig className="w-4 h-4 text-primary" />
           每日阅读
         </button>
       </div>
