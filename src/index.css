@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  --font-display: "Lexend", "Inter", sans-serif;
+  
+  --color-primary: #135bec;
+  --color-background-light: #f6f6f8;
+  --color-background-dark: #101622;
+  --color-card-dark: #1a2232;
+  --color-surface-dark: #161e2d;
+  --color-border-dark: #2a374d;
+}
+
+@layer base {
+  body {
+    @apply font-sans antialiased bg-background-light dark:bg-background-dark text-slate-900 dark:text-white;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+.ios-blur {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.glass-toolbar {
+  background: rgba(16, 22, 34, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cet-keyword {
+  border-bottom: 2px solid #135bec;
+  color: #135bec;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.cet-keyword:hover {
+  @apply bg-primary/10;
+}
