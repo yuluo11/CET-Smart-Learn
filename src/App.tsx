@@ -1650,9 +1650,38 @@ function ProfileScreen({ onNavigate }: { onNavigate: (s: Screen) => void }) {
               <RefreshCw className={`w-6 h-6 text-white ${isUpdatingAvatar ? 'animate-spin' : ''}`} />
             </div>
           </div>
-          <div>
+          <div className="flex-1">
             <h3 className="text-2xl font-bold">{userName}</h3>
-            <p className="text-slate-500 dark:text-slate-400">ID: {user?.id?.slice(0, 8) || '----'}</p>
+            <p className="text-slate-500 dark:text-slate-400 mt-0.5 mb-3 text-sm">ID: {user?.id?.slice(0, 8) || '----'}</p>
+            <div className="flex items-center gap-4">
+              <a
+                href="https://twitter.com/yuluo_30828"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-full bg-white dark:bg-[#192233] border border-slate-200 dark:border-white/5 shadow-sm text-slate-600 dark:text-slate-400 hover:text-[#1DA1F2] dark:hover:text-[#1DA1F2] hover:border-[#1DA1F2]/30 transition-all hover:scale-110 active:scale-95"
+                title="Twitter"
+              >
+                <Twitter className="w-4 h-4 fill-current" />
+              </a>
+              <a
+                href="https://t.me/yuyulou"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-full bg-white dark:bg-[#192233] border border-slate-200 dark:border-white/5 shadow-sm text-slate-600 dark:text-slate-400 hover:text-[#229ED9] dark:hover:text-[#229ED9] hover:border-[#229ED9]/30 transition-all hover:scale-110 active:scale-95"
+                title="Telegram"
+              >
+                <Send className="w-4 h-4" />
+              </a>
+              <a
+                href="https://github.com/yuluo11"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-full bg-white dark:bg-[#192233] border border-slate-200 dark:border-white/5 shadow-sm text-slate-600 dark:text-slate-400 hover:text-black dark:hover:text-white transition-all hover:scale-110 active:scale-95"
+                title="GitHub"
+              >
+                <Github className="w-4 h-4" />
+              </a>
+            </div>
           </div>
         </div>
 
@@ -1681,41 +1710,9 @@ function ProfileScreen({ onNavigate }: { onNavigate: (s: Screen) => void }) {
         </div>
 
         <div className="mt-8 space-y-4">
-          <div className="p-5 bg-primary/5 rounded-xl border border-primary/10 flex flex-col items-center justify-center gap-4">
-            <div className="text-center">
-              <p className="text-xs font-bold text-primary uppercase mb-1">当前版本</p>
-              <p className="text-sm text-slate-600 dark:text-slate-300">CET Smart Learn v1.2.0 (Beta)</p>
-            </div>
-
-            <div className="flex items-center gap-6 mt-1">
-              <a
-                href="https://twitter.com/yuluo_30828"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2.5 rounded-full bg-white dark:bg-[#192233] border border-slate-200 dark:border-white/5 shadow-sm text-slate-600 dark:text-slate-400 hover:text-[#1DA1F2] dark:hover:text-[#1DA1F2] hover:border-[#1DA1F2]/30 transition-all hover:scale-110 active:scale-95"
-                title="Twitter"
-              >
-                <Twitter className="w-5 h-5 fill-current" />
-              </a>
-              <a
-                href="https://t.me/yuyulou"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2.5 rounded-full bg-white dark:bg-[#192233] border border-slate-200 dark:border-white/5 shadow-sm text-slate-600 dark:text-slate-400 hover:text-[#229ED9] dark:hover:text-[#229ED9] hover:border-[#229ED9]/30 transition-all hover:scale-110 active:scale-95"
-                title="Telegram"
-              >
-                <Send className="w-5 h-5" />
-              </a>
-              <a
-                href="https://github.com/yuluo11"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2.5 rounded-full bg-white dark:bg-[#192233] border border-slate-200 dark:border-white/5 shadow-sm text-slate-600 dark:text-slate-400 hover:text-black dark:hover:text-white transition-all hover:scale-110 active:scale-95"
-                title="GitHub"
-              >
-                <Github className="w-5 h-5" />
-              </a>
-            </div>
+          <div className="p-4 bg-primary/5 rounded-xl border border-primary/10">
+            <p className="text-xs font-bold text-primary uppercase mb-1">当前版本</p>
+            <p className="text-sm text-slate-600 dark:text-slate-300">CET Smart Learn v1.2.0 (Beta)</p>
           </div>
         </div>
 
